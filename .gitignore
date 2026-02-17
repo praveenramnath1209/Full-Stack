@@ -1,0 +1,11 @@
+# Ignore PDF files
+*.pdf
+
+# Ignore Word documents
+*.doc
+*.docx
+
+# Ignore other document types
+*.txt
+*.rtf
+*.odt
