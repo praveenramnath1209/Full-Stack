@@ -1,0 +1,77 @@
+<!doctype html>
+<html ng-app="taskApp">
+  <head>
+    <title>TASK LIST</title>
+
+    <!-- AngularJS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-controller="taskController">
+    <div class="container">
+      <h1 style="color: white">Task List</h1>
+
+      <!-- Add Task -->
+      <div class="input-group">
+        <input type="text" ng-model="newTask" placeholder="Add a new task..." />
+        <button ng-click="addTask()">Add</button>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filters">
+        <button
+          ng-click="filterStatus='all'"
+          style="background-color: rgb(49, 203, 211)"
+        >
+          All
+        </button>
+        <button
+          ng-click="filterStatus='completed'"
+          style="background-color: rgb(38, 189, 38)"
+        >
+          Completed
+        </button>
+        <button ng-click="filterStatus='pending'" style="background-color: red">
+          Pending
+        </button>
+      </div>
+
+      <!-- Task List -->
+      <ul>
+        <li ng-repeat="task in tasks | filter:taskFilter track by $index">
+          <div class="left">
+            <input type="checkbox" ng-model="task.completed" />
+
+            <span ng-class="{'done': task.completed}" ng-hide="task.editing">
+              {{task.name}}
+            </span>
+
+            <input type="text" ng-model="task.name" ng-show="task.editing" />
+          </div>
+
+          <div class="right">
+            <button
+              class="edit"
+              ng-click="editTask(task)"
+              ng-hide="task.editing"
+            >
+              Edit
+            </button>
+            <button
+              class="save"
+              ng-click="saveTask(task)"
+              ng-show="task.editing"
+            >
+              Save
+            </button>
+            <button class="delete" ng-click="deleteTask($index)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

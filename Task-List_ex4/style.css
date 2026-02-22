@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(bg.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Card */
+.container {
+  width: 480px;
+  background: #2c2f33;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  color: rgb(0, 0, 0);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #f7fb00;
+  color: rgb(0, 0, 0);
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Filters */
+.filters {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.filters button {
+  margin: 4px;
+  background: #607d8b;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #ffffff;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Action Buttons */
+.edit {
+  background: #ff9800;
+}
+
+.save {
+  background: #2196f3;
+}
+
+.delete {
+  background: #f44336;
+}
