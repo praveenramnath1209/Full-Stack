@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Course Enrollment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body class="bg-light">
+    <div class="container mt-5 text-center">
+      <div class="card shadow p-4">
+        <h3>Web Development Course</h3>
+        <p>Enroll now to start your journey in Full Stack Development.</p>
+
+        <button id="enrollBtn" class="btn btn-primary">Enroll Now</button>
+
+        <div
+          id="message"
+          class="alert alert-success mt-3"
+          style="display: none"
+        >
+          🎉 Successfully Enrolled in the Course!
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#enrollBtn").click(function () {
+          $("#message").fadeIn();
+          $(this).hide();
+        });
+      });
+    </script>
+  </body>
+</html>
